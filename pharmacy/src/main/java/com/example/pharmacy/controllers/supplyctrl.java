@@ -1,15 +1,19 @@
 package com.example.pharmacy.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.pharmacy.entity.distibutor;
 import com.example.pharmacy.entity.suppliers;
 import com.example.pharmacy.service.suppservice;
 
@@ -39,5 +43,12 @@ public class supplyctrl {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to delete supplier");
         }
     }
+    @GetMapping("/getDistributors")
+    public ResponseEntity<List<distibutor>> getdistributors()
+    {
+        List<distibutor> result = service.showdata();
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+        
 
+}
 }

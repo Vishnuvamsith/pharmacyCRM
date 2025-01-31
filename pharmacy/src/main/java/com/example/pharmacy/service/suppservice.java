@@ -1,16 +1,21 @@
 package com.example.pharmacy.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.pharmacy.entity.distibutor;
 import com.example.pharmacy.entity.suppliers;
+import com.example.pharmacy.repository.distrepo;
 import com.example.pharmacy.repository.supprepo;
 
 @Service
 public class suppservice {
     @Autowired
     private supprepo repo;
+    @Autowired
+    private distrepo dist;
     public String createsupplier(suppliers data)
     {
         suppliers temp=repo.findByName(data.getName());
@@ -38,8 +43,8 @@ public class suppservice {
         }
         return "supplier not found";
     }
-    public void showdata()
+    public List<distibutor> showdata()
     {
-
+        return dist.findAll();
     }
 }
