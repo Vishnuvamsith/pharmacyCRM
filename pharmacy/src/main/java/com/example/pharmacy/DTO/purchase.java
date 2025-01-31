@@ -14,4 +14,5 @@ public class purchase {
     private String description;
     private int quantity;
     private Date expiDate;
+    private int supplierId;
 }

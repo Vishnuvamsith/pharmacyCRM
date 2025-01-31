@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class suppliers {
     @Id
     private ObjectId _id; 
+    private int supplierId;
     private String name;
     private long phoneNumber;
     private String email;

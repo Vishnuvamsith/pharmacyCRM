@@ -3,6 +3,7 @@ package com.example.pharmacy.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.pharmacy.entity.distibutor;
 import com.example.pharmacy.entity.suppliers;
 import com.example.pharmacy.repository.supprepo;
 
@@ -19,6 +20,7 @@ public class suppservice {
         }
         suppliers newsuppy=new suppliers();
         newsuppy.setName(data.getName());
+        newsuppy.setSupplierId(data.getSupplierId());
         newsuppy.setEmail(data.getEmail());
         newsuppy.setPhoneNumber(data.getPhoneNumber());
         newsuppy.setAddress(data.getAddress());
@@ -35,5 +37,9 @@ public class suppservice {
             return "supplier deleted sucessfully";
         }
         return "supplier not found";
+    }
+    public void showdata()
+    {
+
     }
 }
